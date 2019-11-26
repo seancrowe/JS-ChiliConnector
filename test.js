@@ -1,17 +1,16 @@
-let cs = require('./main');
+let ChiliConnector = require('./main').ChiliConnector;
 
-let connectorRest = new cs.ChiliConnector("http://www.crowe.chili/5.6/");
-let connectorSoap = new cs.ChiliConnector("http://www.crowe.chili/5.6/", false);
+let connectorRest = new ChiliConnector("https://demo.chili-publish.com/chili/");
+let connectorSoap = new ChiliConnector("https://demo.chili-publish.com/chili/",
+    {
+        rest: false
+    });
 
 async function main() {
     try {
 
-        console.log(await connectorSoap.getServerDateAsync());
+        console.log(await connectorSoap.getServerDateAsync(true));
         console.log(await connectorRest.getServerDateAsync());
-
-        console.log(await connectorSoap.generateApiKeyAsync("admin", "admin", "admin"));
-        console.log(await connectorRest.generateApiKeyAsync("admin", "admin", "admin"));
-
      }
     catch (error)
     {
