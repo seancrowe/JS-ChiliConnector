@@ -1,6 +1,6 @@
 {
   "name": "chiliconnector",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Wrapper for dealing with CHILI publish web services",
   "main": "main.js",
   "repository": {
